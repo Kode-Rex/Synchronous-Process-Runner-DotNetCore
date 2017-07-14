@@ -1,0 +1,4 @@
+*.deps.json
+**/bin/Debug/**
+**/.suo
+**/obj/**
