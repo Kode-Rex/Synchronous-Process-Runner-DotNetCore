@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <PackageId>TddBuddy.Synchronous.Process.Runner.DotNetCore</PackageId>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Company>StoneAge Technologies</Company>
     <Authors>TddBuddy</Authors>
     <Product>Synchronous Process Runner</Product>

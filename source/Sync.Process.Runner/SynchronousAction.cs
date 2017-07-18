@@ -31,7 +31,8 @@ namespace TddBuddy.Synchronous.Process.Runner
                 if (HasError(error))
                 {
                     var errorOutput = new ErrorOutputMessage();
-                    errorOutput.AddError($"Failed to execute [{processStartInfo.Arguments}].");
+                    var trimedArugments = processStartInfo.Arguments.Substring(3);
+                    errorOutput.AddError($"Failed to execute {trimedArugments}");
                     errorOutput.AddError(error);
                     presenter.Respond(errorOutput);
                     return;
