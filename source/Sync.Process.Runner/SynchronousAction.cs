@@ -17,13 +17,21 @@ namespace TddBuddy.Synchronous.Process.Runner
 
         public void Execute(IRespondWithSuccessOrError<string, ErrorOutputMessage> presenter)
         {
+            Execute(null, presenter);
+        }
+
+        public void Execute(string input, IRespondWithSuccessOrError<string, ErrorOutputMessage> presenter)
+        {
             var processStartInfo = _processPipeLineTask.CommandToExecute();
 
             using (var process = _processFactory.CreateProcess(processStartInfo))
             {
                 process.Start();
+
                 var readerTask = process.ReadStdOutToEndAsync();
                 var errorTask = process.ReadStdErrToEndAsync();
+
+                process.WriteToStdInput(input);
 
                 process.WaitForExit();
 
