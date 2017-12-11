@@ -2,3 +2,4 @@
 **/bin/Debug/**
 **/.suo
 **/obj/**
+.vs
