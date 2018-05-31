@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace TddBuddy.Synchronous.Process.Runner.PipeLineTask
@@ -18,10 +19,19 @@ namespace TddBuddy.Synchronous.Process.Runner.PipeLineTask
 
         public override ProcessStartInfo CommandToExecute()
         {
+            var fileName = "node";
+            var arguments = $"\"{_applicationPath}\" {_arguments}";
+
+            if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                fileName = "cmd.exe";
+                arguments = $"/C node \"{_applicationPath}\" {_arguments}";
+            }
+
             var processStartInfo = new ProcessStartInfo
             {
-                FileName = "cmd.exe",
-                Arguments = $"/C node \"{_applicationPath}\" {_arguments}",
+                FileName = fileName,
+                Arguments = arguments,
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 RedirectStandardInput = true,
@@ -30,6 +40,7 @@ namespace TddBuddy.Synchronous.Process.Runner.PipeLineTask
                 StandardErrorEncoding = Encoding.UTF8,
                 StandardOutputEncoding = Encoding.UTF8
             };
+
             return processStartInfo;
         }
     }
