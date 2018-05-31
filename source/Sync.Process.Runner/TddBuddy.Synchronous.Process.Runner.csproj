@@ -3,15 +3,15 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <PackageId>TddBuddy.Synchronous.Process.Runner.DotNetCore</PackageId>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <Company>StoneAge Technologies</Company>
     <Authors>TddBuddy</Authors>
     <Product>Synchronous Process Runner</Product>
     <Description>A simple framework for running exe processes. I.E like invoking node to run docx templater, then invoking libre office to convert the docx file to PDF.</Description>
-    <PackageReleaseNotes>Check that the executable exist</PackageReleaseNotes>
+    <PackageReleaseNotes>dotnet core 2.0</PackageReleaseNotes>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>2.0.0.0</FileVersion>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
+    <FileVersion>2.0.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
