@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace TddBuddy.Synchronous.Process.Runner
+namespace StoneAge.Synchronous.Process.Runner
 {
     public interface IProcess : IDisposable
     {

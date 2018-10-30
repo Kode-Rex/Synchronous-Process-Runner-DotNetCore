@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace TddBuddy.Synchronous.Process.Runner.PipeLineTask
+namespace StoneAge.Synchronous.Process.Runner.PipeLineTask
 {
     public abstract class NodePipeLineTask : ProcessPipeLineTask
     {

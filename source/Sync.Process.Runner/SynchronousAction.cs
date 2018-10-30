@@ -1,9 +1,9 @@
 ﻿using System;
+using StoneAge.Synchronous.Process.Runner.PipeLineTask;
 using TddBuddy.CleanArchitecture.Domain.Messages;
 using TddBuddy.CleanArchitecture.Domain.Output;
-using TddBuddy.Synchronous.Process.Runner.PipeLineTask;
 
-namespace TddBuddy.Synchronous.Process.Runner
+namespace StoneAge.Synchronous.Process.Runner
 {
     public class SynchronousAction : ISynchronousAction
     {

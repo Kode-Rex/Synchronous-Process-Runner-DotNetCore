@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TddBuddy.Synchronous.Process.Runner
+namespace StoneAge.Synchronous.Process.Runner
 {
     public class SystemProcess : IProcess
     {

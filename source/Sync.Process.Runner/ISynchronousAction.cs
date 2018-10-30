@@ -2,7 +2,7 @@
 using TddBuddy.CleanArchitecture.Domain.Messages;
 using TddBuddy.CleanArchitecture.Domain.Output;
 
-namespace TddBuddy.Synchronous.Process.Runner
+namespace StoneAge.Synchronous.Process.Runner
 {
     public interface ISynchronousAction : IAction<string>
     {

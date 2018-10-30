@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace TddBuddy.Synchronous.Process.Runner
+namespace StoneAge.Synchronous.Process.Runner
 {
     public class ProcessFactory : IProcessFactory
     {
