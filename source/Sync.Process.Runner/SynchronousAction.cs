@@ -1,7 +1,7 @@
 ﻿using System;
+using StoneAge.CleanArchitecture.Domain.Messages;
+using StoneAge.CleanArchitecture.Domain.Output;
 using StoneAge.Synchronous.Process.Runner.PipeLineTask;
-using TddBuddy.CleanArchitecture.Domain.Messages;
-using TddBuddy.CleanArchitecture.Domain.Output;
 
 namespace StoneAge.Synchronous.Process.Runner
 {
@@ -16,12 +16,12 @@ namespace StoneAge.Synchronous.Process.Runner
             _processFactory = processFactory;
         }
 
-        public void Execute(IRespondWithSuccessOrError<string, ErrorOutputMessage> presenter)
+        public void Execute(IRespondWithSuccessOrError<string, ErrorOutput> presenter)
         {
             Execute(null, presenter);
         }
 
-        public void Execute(string input, IRespondWithSuccessOrError<string, ErrorOutputMessage> presenter)
+        public void Execute(string input, IRespondWithSuccessOrError<string, ErrorOutput> presenter)
         {
             var processStartInfo = _processPipeLineTask.CommandToExecute();
             
@@ -41,7 +41,7 @@ namespace StoneAge.Synchronous.Process.Runner
                     var error = errorTask.Result;
                     if (HasError(error))
                     {
-                        var errorOutput = new ErrorOutputMessage();
+                        var errorOutput = new ErrorOutput();
                         var trimedArugments = processStartInfo.Arguments.Substring(3);
                         errorOutput.AddError($"Failed to execute {trimedArugments}");
                         errorOutput.AddError(error);

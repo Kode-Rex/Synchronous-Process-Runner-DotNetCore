@@ -3,20 +3,20 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <PackageId>StoneAge.Synchronous.Process.Runner.DotNetCore</PackageId>
-    <Version>2.0.3</Version>
+    <Version>2.0.4</Version>
     <Company>StoneAge Technologies</Company>
     <Authors>Travis Frisinger</Authors>
     <Product>Synchronous Process Runner</Product>
     <Description>A simple framework for running exe processes. I.E like invoking node to run docx templater, then invoking libre office to convert the docx file to PDF.</Description>
     <PackageReleaseNotes>TddBuddy port to StoneAge</PackageReleaseNotes>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <AssemblyVersion>2.0.3.0</AssemblyVersion>
-    <FileVersion>2.0.3.0</FileVersion>
+    <AssemblyVersion>2.0.4.0</AssemblyVersion>
+    <FileVersion>2.0.4.0</FileVersion>
     <PackageProjectUrl>https://github.com/StoneAgeTechnologies/Synchronous-Process-Runner-DotNetCore</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="TddBuddy.CleanArchitecture.Domain.DotNetCore" Version="3.7.1" />
+    <PackageReference Include="StoneAge.CleanArchitecture.Domain.DotNetCore" Version="3.7.2" />
   </ItemGroup>
 
 </Project>
