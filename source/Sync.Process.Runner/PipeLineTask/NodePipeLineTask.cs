@@ -22,7 +22,7 @@ namespace StoneAge.Synchronous.Process.Runner.PipeLineTask
             var fileName = "node";
             var arguments = $"\"{_applicationPath}\" {_arguments}";
 
-            if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 fileName = "cmd.exe";
                 arguments = $"/C node \"{_applicationPath}\" {_arguments}";
