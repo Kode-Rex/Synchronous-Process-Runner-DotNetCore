@@ -34,9 +34,16 @@ namespace StoneAge.Synchronous.Process.Runner
                     var readerTask = process.ReadStdOutToEndAsync();
                     var errorTask = process.ReadStdErrToEndAsync();
 
-                process.WriteToStdInput(input);
+                    process.WriteToStdInput(input);
 
-                    process.WaitForExit();
+                    process.WaitForExit(_processPipeLineTask.ProcessTimeout());
+
+                    if (process.TimeoutOccured)
+                    {
+                        var errorOutput = new ErrorOutput();
+                        errorOutput.AddError($"The process timed out after waiting [{_processPipeLineTask.ProcessTimeout()}] seconds.");
+                        return;
+                    }
 
                     var error = errorTask.Result;
                     if (HasError(error))

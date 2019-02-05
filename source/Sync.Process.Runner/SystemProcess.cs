@@ -9,9 +9,11 @@ namespace StoneAge.Synchronous.Process.Runner
     {
         private readonly System.Diagnostics.Process _process;
 
+        public bool TimeoutOccured { get; private set; }
+
         public SystemProcess()
         {
-            _process = new System.Diagnostics.Process();
+            _process = new System.Diagnostics.Process {EnableRaisingEvents = true};
         }
 
         public void Dispose()
@@ -30,9 +32,15 @@ namespace StoneAge.Synchronous.Process.Runner
             _process.Start();
         }
 
-        public void WaitForExit()
+        public void WaitForExit(int timeoutSeconds)
         {
-            _process.WaitForExit();
+            if (Process_Has_Timeout(timeoutSeconds))
+            {
+                Wait_For_Process_To_Exit_Within_Timeout_Interval(timeoutSeconds);
+                return;
+            }
+
+            Wait_For_Process_To_Exit_Indefinitely();
         }
 
         public Task<string> ReadStdOutToEndAsync()
@@ -56,6 +64,29 @@ namespace StoneAge.Synchronous.Process.Runner
             {
                 inputStreamWriter.Write(input);
             }
+        }
+
+        private bool Did_Timeout_Happen(bool exitStatus)
+        {
+            return !exitStatus;
+        }
+
+        private void Wait_For_Process_To_Exit_Indefinitely()
+        {
+            _process.WaitForExit();
+        }
+
+        private void Wait_For_Process_To_Exit_Within_Timeout_Interval(int timeoutSeconds)
+        {
+            var timeout = timeoutSeconds * 1000;
+            _process.WaitForExit(timeout);
+            TimeoutOccured = !_process.HasExited;
+            _process.Kill();
+        }
+
+        private static bool Process_Has_Timeout(int timeoutSeconds)
+        {
+            return timeoutSeconds > 0;
         }
     }
 }
