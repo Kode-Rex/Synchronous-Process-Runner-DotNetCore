@@ -81,10 +81,7 @@ namespace StoneAge.Synchronous.Process.Runner
             var timeout = timeoutSeconds * 1000;
             _process.WaitForExit(timeout);
             TimeoutOccured = !_process.HasExited;
-            if (TimeoutOccured)
-            {
-                _process.Kill();
-            }
+            _process.Kill();
         }
 
         private static bool Process_Has_Timeout(int timeoutSeconds)
