@@ -22,11 +22,6 @@ namespace StoneAge.Synchronous.Process.Runner.PipeLineTask
             var fileName = "/bin/bash";
             var arguments = $"{_application} {_arguments}";
 
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                throw new WrongOsException("This task will not run on Windows!");
-            }
-
             var processStartInfo = new ProcessStartInfo
             {
                 FileName = fileName,
