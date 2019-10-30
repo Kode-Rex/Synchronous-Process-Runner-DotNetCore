@@ -20,7 +20,7 @@ namespace StoneAge.Synchronous.Process.Runner.PipeLineTask
         public override ProcessStartInfo CommandToExecute()
         {
 
-            var fileName = "\"{_applicationPath}\"";
+            var fileName = $"\"{_applicationPath}\"";
             var arguments = $"\"{_arguments}\"";
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
