@@ -21,7 +21,7 @@ namespace StoneAge.Synchronous.Process.Runner.PipeLineTask
         {
 
             var fileName = $"{_applicationPath}";
-            var arguments = $"\"{_arguments}\"";
+            var arguments = $"{_arguments}";
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
