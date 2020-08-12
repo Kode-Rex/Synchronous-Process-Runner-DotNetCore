@@ -10,6 +10,8 @@ namespace StoneAge.Synchronous.Process.Runner
         private readonly IProcessFactory _processFactory;
         private readonly ProcessPipeLineTask _processPipeLineTask;
 
+        public SynchronousAction(ProcessPipeLineTask processPipeLineTask) : this(processPipeLineTask, new ProcessFactory()) { }
+
         public SynchronousAction(ProcessPipeLineTask processPipeLineTask, IProcessFactory processFactory)
         {
             _processPipeLineTask = processPipeLineTask;
