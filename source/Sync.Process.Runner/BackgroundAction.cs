@@ -42,6 +42,12 @@ namespace StoneAge.Synchronous.Process.Runner
 
                 var errorTask = _process.ReadStdErrToEndAsync();
 
+                if (!errorTask.Wait(500))
+                {
+                    // was there error data to fetch?
+                    presenter.Respond();
+                }
+
                 var error = errorTask.Result;
                 if (HasError(error))
                 {
