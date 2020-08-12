@@ -3,15 +3,15 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <PackageId>StoneAge.Synchronous.Process.Runner.DotNetCore</PackageId>
-    <Version>2.2.2</Version>
+    <Version>2.2.3</Version>
     <Company>StoneAge Technologies</Company>
     <Authors>Travis Frisinger</Authors>
     <Product>Synchronous Process Runner</Product>
     <Description>A simple framework for running exe processes. I.E like invoking node to run docx templater, then invoking libre office to convert the docx file to PDF.</Description>
     <PackageReleaseNotes>Fixed up waiting for errors in background task execution</PackageReleaseNotes>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <AssemblyVersion>2.2.2.0</AssemblyVersion>
-    <FileVersion>2.2.2.0</FileVersion>
+    <AssemblyVersion>2.2.3.0</AssemblyVersion>
+    <FileVersion>2.2.3.0</FileVersion>
     <PackageProjectUrl>https://github.com/StoneAgeTechnologies/Synchronous-Process-Runner-DotNetCore</PackageProjectUrl>
   </PropertyGroup>
 

@@ -46,6 +46,7 @@ namespace StoneAge.Synchronous.Process.Runner
                 {
                     // was there error data to fetch?
                     presenter.Respond();
+                    return;
                 }
 
                 var error = errorTask.Result;
